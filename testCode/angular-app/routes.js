@@ -8,7 +8,7 @@ function routes($routeProvider) {
     })
     .when('/companies/:id', {
       templateUrl: 'angular-app/pages/people-in-company.html',
-      controller: 'CompanyController as vm'
+      controller: 'CompanyPeopleController as vm'
     })
     .otherwise({
       redirectTo: '/'

@@ -1,10 +1,11 @@
-body{
-
+.back{
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
-
 .company-list{
   padding-left: 0px;
   padding-right: 0px;
-  height: 600px;
+  height: 1000px;
   overflow: auto;
 }
