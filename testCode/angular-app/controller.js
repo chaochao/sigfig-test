@@ -27,7 +27,8 @@ function MainController($scope, $http) {
       };
       console.log(newCompany);
       $http.post('/companies', newCompany).then(function(res) {
-        console.log(res);
+        console.log("res",res);
+        $scope.compayList.push(res.data);
         $scope.cancel();
       }).catch(function(err) {
         console.log(err);
