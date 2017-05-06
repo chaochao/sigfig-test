@@ -9,3 +9,9 @@
   height: 1000px;
   overflow: auto;
 }
+.card{
+  margin-top: 20px;
+}
+.card-header{
+  font-size: 30px;
+}

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1> People in this company</h1>
+  <h1> People in {{company.name}}</h1>
   <a href="#!/" class="back">Back</a>
   <hr>
   <div class="content row">
@@ -8,17 +8,16 @@
         Employee List
       </div>
       <div class="card-block">
-        <div ng-repeat="n in [42, 43, 44, 45] "> 
+        <div ng-repeat="people in companyPeopleList ">
           <div class="card">
-          <div class="card-header">
-            <a href="#!/person/id">person name</a>
+            <div class="card-header">
+              <a href="#!/person/{{people._id}}">{{people.name}}</a>
+            </div>
+            <div class="card-block">
+              <p class="card-text">Company: {{people.companyName}}</p>
+              <p class="card-text">Email: {{people.email}}</p>
+            </div>
           </div>
-          <div class="card-block">
-            
-            <p class="card-text">personId: abcd</p>
-            <p class="card-text">Email: 123</p>
-          </div>
-        </div>
         </div>
       </div>
     </div>
@@ -28,23 +27,19 @@
         <hr>
         <div class="form-group">
           <label for="person-name">Name:</label>
-          <input type="text" class="form-control" id="person-name" placeholder="person name">
+          <input type="text" required="required" class="form-control" ng-model="newPerson.name" id="person-name" placeholder="person name">
         </div>
         <div class="form-group">
-          <label for="person-address">Address:</label>
-          <input type="text" class="form-control" id="person-address" placeholder="">
+          <label for="person-email">Email:</label>
+          <input type="email" required="required" class="form-control" ng-model="newPerson.email" id="person-email" placeholder="abc@cde.com">
         </div>
-        <div class="form-group">
-          <label for="person-phone">Email:</label>
-          <input type="text" class="form-control" id="person-phone" placeholder="">
+        <div class="form-group row">
+          <div class="offset-sm-2 col-sm-10">
+            <button type="submit" ng-click="createNewPerson()" class="btn btn-primary">Save</button>
+            <button type="submit" ng-click="cancel()"class="btn btn-primary">Cancel</button>
+          </div>
         </div>
       </form>
-      <div class="form-group row">
-        <div class="offset-sm-2 col-sm-10">
-          <button type="submit" class="btn btn-primary">Save</button>
-          <button type="submit" class="btn btn-primary">Cancel</button>
-        </div>
-      </div>
     </div>
   </div>
 </div>

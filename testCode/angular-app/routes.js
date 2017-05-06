@@ -10,6 +10,10 @@ function routes($routeProvider) {
       templateUrl: 'angular-app/pages/people-in-company.html',
       controller: 'CompanyPeopleController as vm'
     })
+    // .when('/people/:id', {
+    //   templateUrl: 'angular-app/pages/person-profile.html',
+    //   controller: 'PeopleProfileController as vm'
+    // })
     .otherwise({
       redirectTo: '/'
     })

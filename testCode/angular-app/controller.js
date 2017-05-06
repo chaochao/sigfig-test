@@ -2,18 +2,16 @@ console.log('main controller');
 sigfigApp.controller('MainController', MainController)
 
 function MainController($scope, $http) {
-  var self = this;
   $scope.company = {};
-  var companyUrl = '/companies'
-  $http.get(companyUrl).then(function(res) {
-    console.log(res);
+  $scope.compayList = [];
+  var companiesUrl = '/companies'
+  $http.get(companiesUrl).then(function(res) {
     $scope.compayList = res.data;
   }).catch(function(err) {
     console.log(err);
   });
 
   $scope.createCompany = function() {
-    // post 
     var name = $scope.company.name;
     var address = $scope.company.address;
     var revenue = $scope.company.revenue;
@@ -25,18 +23,13 @@ function MainController($scope, $http) {
         "revenue": revenue,
         "phone": phone
       };
-      console.log(newCompany);
       $http.post('/companies', newCompany).then(function(res) {
-        console.log("res",res);
         $scope.compayList.push(res.data);
         $scope.cancel();
       }).catch(function(err) {
         console.log(err);
       });
     }
-
-
-
   }
   $scope.cancel = function() {
     $scope['company'] = {};
@@ -47,7 +40,41 @@ function MainController($scope, $http) {
 sigfigApp.controller('CompanyPeopleController', CompanyPeopleController)
 
 function CompanyPeopleController($scope, $http, $routeParams) {
-  var self = this;
   var companyId = $routeParams.id;
-  console.log("cpid", companyId);
+  $scope.company = {};
+  $scope.newPerson = {};
+  var compayPeopleUrl = '/companies/' + companyId + '/people';
+  $scope.companyPeopleList = [];
+
+  $http.get('/companies/' + companyId).then(function(res) {
+    $scope.company = res.data;
+  })
+  $http.get(compayPeopleUrl).then(function(res) {
+    $scope.companyPeopleList = res.data;
+    $scope.companyPeopleList.forEach(function(ele) {
+      ele.companyName = $scope.company.name;
+    })
+  }).catch(function(err) {
+    console.log(err);
+  });
+
+  $scope.createNewPerson = function() {
+    var newPerson = $scope.newPerson;
+    if (newPerson.name !== undefined && newPerson.email !== undefined) {
+      newPerson.companyId = companyId;
+      $http.post('/person', newPerson).then(function(res) {
+        $scope.companyPeopleList.push(res.data);
+        $scope.cancel();
+      }).catch(function(err) {
+        console.log(err);
+      });
+    }
+  }
+  $scope.cancel = function() {
+    $scope.newPerson = {};
+    $scope.newPerson.email = '';
+  }
+
+
+
 }
