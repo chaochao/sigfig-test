@@ -7,7 +7,7 @@ function routes($routeProvider) {
       controller: 'MainController as vm'
     })
     .when('/companies/:id', {
-      templateUrl: 'angular-app/pages/company.html',
+      templateUrl: 'angular-app/pages/people-in-company.html',
       controller: 'CompanyController as vm'
     })
     .otherwise({

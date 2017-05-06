@@ -1,0 +1,51 @@
+<div class="container">
+  <h1> People in this company</h1>
+  <a href="#!/">Back</a>
+  <hr>
+  <div class="content row">
+    <div class="company-list card col-md-8">
+      <div class=" person-head card-header">
+        Employee List
+      </div>
+      <div class="card-block">
+        <div ng-repeat="n in [42, 42, 43, 43] track by $index">
+          {{n}}
+          <div class="card">
+          <div class="card-header">
+            <a href="#!/person/id">person name</a>
+          </div>
+          <div class="card-block">
+            
+            <p class="card-text">personId: abcd</p>
+            <p class="card-text">Email: 123</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <form class="create-person">
+        <h4> Add new person</h4>
+        <hr>
+        <div class="form-group">
+          <label for="person-name">Name:</label>
+          <input type="text" class="form-control" id="person-name" placeholder="person name">
+        </div>
+        <div class="form-group">
+          <label for="person-address">Address:</label>
+          <input type="text" class="form-control" id="person-address" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="person-phone">Email:</label>
+          <input type="text" class="form-control" id="person-phone" placeholder="">
+        </div>
+      </form>
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-10">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="submit" class="btn btn-primary">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

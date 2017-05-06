@@ -13,8 +13,8 @@ function MainController($scope, $http) {
   });
 }
 
-sigfigApp.controller('CompanyController', CompanyController)
-function CompanyController($scope, $http, $routeParams) {
+sigfigApp.controller('CompanyPeopleController', CompanyPeopleController)
+function CompanyPeopleController($scope, $http, $routeParams) {
   var self = this;
   var companyId = $routeParams.id;
   console.log("cpid",companyId);
