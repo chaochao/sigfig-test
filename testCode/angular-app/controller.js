@@ -4,7 +4,7 @@ sigfigApp.controller('MainController', MainController)
 function MainController($scope, $http) {
   var self = this;
   $scope.title = 'scope main';
-  
+  $scope.phonenumber='';
   var companyUrl = '/companies'
   $http.get(companyUrl).then(function(res) {
     console.log(res);
