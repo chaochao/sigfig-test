@@ -1,15 +1,28 @@
-sigfigApp.service('CompanyServices', CompanyServices);
 
-function CompanyServices(){
-  this.companyTable = {};
+sigfigApp.service('HttpServices', HttpServices);
 
-  this.setcomapy = function(key,val){
-    this.companyTable[key]=val;
+function HttpServices($http) {
+  this.put = function(url, obj, options) {
+    return $http.put(url, obj, options).catch(function(err) {
+      console.log(err);
+    });
   }
-  this.getCompanyIdMap = function(){
-    return this.companyTable;
+
+  this.get = function(url) {
+    return $http.get(url).catch(function(err) {
+      console.log(err);
+    });
   }
-  this.getName = function(id){
-    return this.companyTable[id];
+
+  this.delete = function(url) {
+    return $http.delete(url).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  this.post = function(url, obj, options) {
+    return $http.post(url, obj, options).catch(function(err){
+      console.log(err);
+    });
   }
 }

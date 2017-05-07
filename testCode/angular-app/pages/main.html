@@ -10,7 +10,8 @@
         <div ng-repeat="company in compayList ">
           <div class="card">
             <div class="card-header">
-              <a href="#!/companies/{{company._id}}">{{company.name}}</a>
+              <span class="title">{{company.name}}</span>
+              <a href="#!/companies/{{company._id}}/edit" class="edit-company btn btn-outline-primary btn-sm">Edit</a>
             </div>
             <div class="card-block">
               <p class="card-text">address: {{company.address}}</p>

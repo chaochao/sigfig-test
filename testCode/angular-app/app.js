@@ -1,4 +1,3 @@
-console.log("app.js");
 var sigfigApp = angular.module('sigfigApp', ['ngRoute']);
 sigfigApp.config(function($httpProvider) {
   $httpProvider.defaults.transformRequest = function(obj) {

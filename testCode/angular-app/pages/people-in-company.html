@@ -11,7 +11,7 @@
         <div ng-repeat="people in companyPeopleList ">
           <div class="card">
             <div class="card-header">
-              <a href="#!/person/{{people._id}}">{{people.name}}</a>
+              <a href="#!/people/{{people._id}}?companyName={{company.name}}">{{people.name}}</a>
             </div>
             <div class="card-block">
               <p class="card-text">Company: {{people.companyName}}</p>
