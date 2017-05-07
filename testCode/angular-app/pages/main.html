@@ -8,18 +8,7 @@
       </div>
       <div class="card-block">
         <div ng-repeat="company in compayList ">
-          <div class="card">
-            <div class="card-header">
-              <span class="title">{{company.name}}</span>
-              <a href="#!/companies/{{company._id}}/edit" class="edit-company btn btn-outline-primary btn-sm">Edit</a>
-            </div>
-            <div class="card-block">
-              <p class="card-text">address: {{company.address}}</p>
-              <p class="card-text">revenue: {{company.revenue | currency:"USD$ "}}</p>
-              <p class="card-text">Phone: {{company.phone | tel}}</p>
-              <a href="#!/companies/{{company._id}}" class="btn btn-primary">People who work here</a>
-            </div>
-          </div>
+          <card company="company" ></card>
         </div>
       </div>
       
@@ -44,7 +33,7 @@
         <div class="form-group">
           <label for="company-phone">Phone:</label>
           <input type="text" required="required" class="form-control" ng-model="company.phone" maxlength="10"
-          minlength="10" id="phonenumber" pattern="[0-9]{10}" placeholder"XXXXXXXXXX">
+          minlength="10" id="phone-number" pattern="[0-9]{10}" placeholder"">
         </div>
         <div class="form-group row">
           <div class="offset-sm-2 col-sm-10">

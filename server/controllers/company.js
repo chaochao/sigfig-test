@@ -17,7 +17,7 @@ exports.findById = function(req, res) {
 };
 
 exports.add = function(req, res) {
-	console.log("add new company res: ", res);
+	console.log("add new company res");
 	Company.create(req.body, function(err, company) {
 		if (err) {
 			return console.log(err);
