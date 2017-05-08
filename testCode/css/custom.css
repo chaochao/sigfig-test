@@ -11,17 +11,18 @@
   padding-left: 0px;
   padding-right: 0px;
   height: 600px;
-  overflow: auto;
+  overflow: hidden;
   box-shadow: 1px 1px 5px grey;
 }
-
 .card{
   margin-top: 20px;
+}
+.card-block{
+  overflow: auto;
 }
 
 .card-header{
   font-size: 30px;
-  
 }
 
 .card-block .card-header{
@@ -39,8 +40,4 @@
 
 form{
   margin-top: 15px;
-}
-
-.create-company{
-
 }
