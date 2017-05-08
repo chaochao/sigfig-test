@@ -25,3 +25,11 @@ submit your testCode directory, and anything else you've built as a zip file bac
 
 ## questions/troubleshooting setup issues
 Ping you're recruiter and they'll help you get it working
+
+
+## After set up node and mongodb.
+```
+npm install
+npm run start
+```
+## navigate to http://localhost:3001/testCode/#!/
