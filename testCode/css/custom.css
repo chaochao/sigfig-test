@@ -3,25 +3,41 @@
   top: 20px;
   right: 20px;
 }
+
 .company-list{
   padding-left: 0px;
   padding-right: 0px;
-  height: 1000px;
+  height: 600px;
   overflow: auto;
+  box-shadow: 1px 1px 5px grey;
 }
+
 .card{
   margin-top: 20px;
 }
+
 .card-header{
   font-size: 30px;
+  
 }
+
+.card-block .card-header{
+  border-left: 3px solid #c9302c;
+}
+
 .edit-company{
   float:right;
   margin-top: 10px;
 }
+
 .title{
   font-weight: 200;
 }
+
 form{
   margin-top: 15px;
+}
+
+.create-company{
+
 }
