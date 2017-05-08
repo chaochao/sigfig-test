@@ -1,4 +1,3 @@
-console.log("directive");
 sigfigApp.directive('card', card);
 function card(){
   return {

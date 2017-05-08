@@ -119,12 +119,10 @@ sigfigApp.controller('CompanyProfileController', CompanyProfileController)
 function CompanyProfileController($scope, $routeParams, $location, HttpServices) {
   var companyId = $routeParams.id;
   $scope.company = {};
-  console.log(companyId);
   var companyUrl = '/companies/' + companyId;
   HttpServices.get(companyUrl).then(function(res) {
-      console.log(res);
-      $scope.company = res.data;
-    })
+    $scope.company = res.data;
+  })
 
   $scope.saveCompany = function() {
     var name = $scope.company.name;
@@ -135,7 +133,6 @@ function CompanyProfileController($scope, $routeParams, $location, HttpServices)
       address !== undefined &&
       revenue !== undefined &&
       phone !== undefined) {
-      console.log("scopr comp",$scope.company);
       HttpServices.put(companyUrl, $scope.company).then(function(res) {
         $location.path('#!/');
       })
