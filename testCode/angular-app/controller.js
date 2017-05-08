@@ -17,14 +17,7 @@ function MainController($scope, HttpServices) {
       address !== undefined &&
       revenue !== undefined &&
       phone !== undefined) {
-      // may not needed
-      var newCompany = {
-        "name": name,
-        "address": address,
-        "revenue": revenue,
-        "phone": phone
-      };
-      HttpServices.post('/companies', newCompany).then(function(res) {
+      HttpServices.post('/companies', $scope.company).then(function(res) {
         $scope.compayList.push(res.data);
         $scope.cancel();
       });
